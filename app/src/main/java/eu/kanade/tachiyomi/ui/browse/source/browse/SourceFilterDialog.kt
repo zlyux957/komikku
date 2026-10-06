@@ -1,5 +1,6 @@
 package eu.kanade.tachiyomi.ui.browse.source.browse
 
+// KMK -->
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,6 +20,8 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import eu.kanade.presentation.browse.components.KavitaSortAdapter
+import eu.kanade.presentation.browse.components.KavitaSortItem
 import eu.kanade.presentation.components.AdaptiveSheet
 import eu.kanade.tachiyomi.source.model.Filter
 import eu.kanade.tachiyomi.source.model.FilterList
@@ -37,6 +40,7 @@ import tachiyomi.presentation.core.components.TextItem
 import tachiyomi.presentation.core.components.TriStateItem
 import tachiyomi.presentation.core.components.material.Button
 import tachiyomi.presentation.core.i18n.stringResource
+// KMK <--
 
 @Composable
 fun SourceFilterDialog(
@@ -54,6 +58,7 @@ fun SourceFilterDialog(
     // KMK -->
     onSavedSearchPressDesc: String,
     shouldShowSavingButton: Boolean = true,
+    useKavitaSort: Boolean = false,
     // KMK <--
     openMangaDexRandom: (() -> Unit)?,
     openMangaDexFollows: (() -> Unit)?,
@@ -126,7 +131,16 @@ fun SourceFilterDialog(
             }
 
             items(filters) {
-                FilterItem(it, updateFilters /* SY --> */, startExpanded /* SY <-- */)
+                // KMK -->
+                val kavitaLabels = if (useKavitaSort && it is Filter.Sort) KavitaSortAdapter.labels(it) else null
+                if (it is Filter.Sort && kavitaLabels != null) {
+                    KavitaSortItem(it, kavitaLabels, updateFilters)
+                } else {
+                    // KMK <--
+                    FilterItem(it, updateFilters /* SY --> */, startExpanded /* SY <-- */)
+                    // KMK -->
+                }
+                // KMK <--
             }
         }
     }

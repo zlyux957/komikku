@@ -238,4 +238,20 @@
     <string name="pref_discord_show_download_button_summary">Displays a button to download the app</string>
     <string name="pref_discord_show_discord_button">Show Discord Button</string>
     <string name="pref_discord_show_discord_button_summary">Displays a button to join the Discord server</string>
+    <!-- KMK -->
+    <!-- Kavita sorting: presentation labels for the recognized extension schema -->
+    <string name="kavita_sort_field">排序方式</string>
+    <string name="kavita_sort_direction">排序方向</string>
+    <string name="kavita_sort_ascending">升冪</string>
+    <string name="kavita_sort_descending">降冪</string>
+    <string name="kavita_sort_name">名稱</string>
+    <string name="kavita_sort_created">建立時間</string>
+    <string name="kavita_sort_modified">最近修改</string>
+    <string name="kavita_sort_added">最近新增章節</string>
+    <string name="kavita_sort_reading_time">閱讀所需時間</string>
+    <string name="kavita_sort_release_year">出版年份</string>
+    <string name="kavita_sort_progress">閱讀進度</string>
+    <string name="kavita_sort_rating">平均評分</string>
+    <string name="kavita_sort_random">隨機</string>
+    <!-- KMK end -->
 </resources>
