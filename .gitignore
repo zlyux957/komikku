@@ -1,5 +1,9 @@
 # Build files
 .gradle
+# KMK -->
+# Local Gradle user home (dependencies, wrapper downloads, and temporary files)
+/.gradle-user-home/
+# KMK <--
 #.vscode
 .kotlin
 build
